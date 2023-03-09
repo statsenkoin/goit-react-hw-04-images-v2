@@ -13,7 +13,7 @@ import {
   Modal,
 } from 'components';
 
-// import { AiFillCloseCircle } from 'react-icons/ai';
+import { AiFillCloseCircle } from 'react-icons/ai';
 
 export function App() {
   const [input, setInput] = useState('');
@@ -23,9 +23,9 @@ export function App() {
   const [error, setError] = useState(null);
   const [isLastPage, setIsLastPage] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  // const [isModalShown, setIsModalShown] = useState(false);
-  // const [selectedImageUrl, setSelectedImageUrl] = useState(null);
-  // const [selectedImageTags, setSelectedImageTags] = useState(null);
+  const [isModalShown, setIsModalShown] = useState(false);
+  const [selectedImageUrl, setSelectedImageUrl] = useState(null);
+  const [selectedImageTags, setSelectedImageTags] = useState(null);
 
   useEffect(() => {
     setGallery([]);
@@ -34,7 +34,7 @@ export function App() {
     setError(null);
     setIsLastPage(true);
     setIsLoading(false);
-    // setIsModalShown(false);
+    setIsModalShown(false);
   }, [input]);
 
   useEffect(() => {
@@ -81,15 +81,15 @@ export function App() {
     setPage(prevPage => prevPage + 1);
   };
 
-  // const selectModalImage = (link, tags) => {
-  //   setSelectedImageUrl(link);
-  //   setSelectedImageTags(tags);
-  //   toggleModal();
-  // };
+  const selectModalImage = (link, tags) => {
+    setSelectedImageUrl(link);
+    setSelectedImageTags(tags);
+    toggleModal();
+  };
 
-  // const toggleModal = () => {
-  //   setIsModalShown(isModalShown => !isModalShown);
-  // };
+  const toggleModal = () => {
+    setIsModalShown(isModalShown => !isModalShown);
+  };
 
   return (
     <Layout>
@@ -100,7 +100,7 @@ export function App() {
       {gallery && (
         <>
           <ImageGallery
-            // onSelectModalImage={selectModalImage}
+            onSelectModalImage={selectModalImage}
             gallery={gallery}
           ></ImageGallery>
 
@@ -117,7 +117,7 @@ export function App() {
         <WarningPage>Something went wrong.\n Try again later.</WarningPage>
       )}
 
-      {/* {isModalShown && (
+      {isModalShown && (
         <Modal onToggleModal={toggleModal}>
           <img src={selectedImageUrl} alt={selectedImageTags} />
 
@@ -125,7 +125,7 @@ export function App() {
             <AiFillCloseCircle />
           </Button>
         </Modal>
-      )} */}
+      )}
     </Layout>
   );
 }
