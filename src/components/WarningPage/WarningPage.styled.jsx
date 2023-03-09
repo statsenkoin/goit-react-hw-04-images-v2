@@ -5,8 +5,6 @@ export const WarningPageStyled = styled.h2`
   font-size: 60px;
   text-align: center;
   color: tomato;
-  width: 100vw;
-  height: 100vh;
   padding-block: 200px;
 
   white-space: pre-wrap;

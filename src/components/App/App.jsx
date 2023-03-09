@@ -77,9 +77,7 @@ export function App() {
     return Math.ceil(total / PER_PAGE);
   };
 
-  const onLoadMoreClick = () => {
-    setPage(prevPage => prevPage + 1);
-  };
+  const onLoadMoreClick = () => setPage(prevPage => prevPage + 1);
 
   const selectModalImage = (link, tags) => {
     setSelectedImageUrl(link);
@@ -87,9 +85,7 @@ export function App() {
     toggleModal();
   };
 
-  const toggleModal = () => {
-    setIsModalShown(isModalShown => !isModalShown);
-  };
+  const toggleModal = () => setIsModalShown(isModalShown => !isModalShown);
 
   return (
     <Layout>
@@ -113,6 +109,7 @@ export function App() {
       )}
 
       {isResponseEmpty && <WarningPage>There is nothing to show.</WarningPage>}
+
       {error && (
         <WarningPage>Something went wrong.\n Try again later.</WarningPage>
       )}
