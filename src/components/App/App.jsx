@@ -7,7 +7,8 @@ import { Layout } from './App.styled';
 import {
   Searchbar,
   ImageGallery,
-  LoadMoreButton,
+  // LoadMoreButton,
+  Button,
   Loader,
   WarningPage,
   Modal,
@@ -101,7 +102,12 @@ export function App() {
             onSelectModalImage={selectModalImage}
             gallery={gallery}
           ></ImageGallery>
-          {!isLastPage && <LoadMoreButton onClick={onLoadMoreClick} />}
+          {/* {!isLastPage && <LoadMoreButton onClick={onLoadMoreClick} />} */}
+          {!isLastPage && (
+            <Button mode="loadMore" onClick={onLoadMoreClick}>
+              Load more
+            </Button>
+          )}
         </>
       )}
 
