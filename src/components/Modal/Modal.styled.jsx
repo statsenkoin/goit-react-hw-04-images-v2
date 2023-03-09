@@ -30,24 +30,3 @@ export const Content = styled.div`
 
   overflow: hidden;
 `;
-
-export const ButtonClose = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  font-size: 28px;
-  color: rgba(255, 0, 0, 0.4);
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    color: red;
-    scale: 1.1;
-  }
-`;

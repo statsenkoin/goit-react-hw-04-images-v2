@@ -7,7 +7,6 @@ import { Layout } from './App.styled';
 import {
   Searchbar,
   ImageGallery,
-  // LoadMoreButton,
   Button,
   Loader,
   WarningPage,
@@ -104,7 +103,7 @@ export function App() {
             onSelectModalImage={selectModalImage}
             gallery={gallery}
           ></ImageGallery>
-          {/* {!isLastPage && <LoadMoreButton onClick={onLoadMoreClick} />} */}
+
           {!isLastPage && (
             <Button mode="loadMore" onClick={onLoadMoreClick}>
               Load more
@@ -113,16 +112,11 @@ export function App() {
         </>
       )}
 
-      {isResponseEmpty && <WarningPage text={'There is nothing to show.'} />}
+      {isResponseEmpty && <WarningPage>There is nothing to show.</WarningPage>}
       {error && (
-        <WarningPage text={`Something went wrong.\n Try again later.`} />
+        <WarningPage>Something went wrong.\n Try again later.</WarningPage>
       )}
 
-      {/* {isModalShown && (
-        <Modal onToggleModal={toggleModal}>
-          <img src={selectedImageUrl} alt={selectedImageTags} />
-        </Modal>
-      )} */}
       {isModalShown && (
         <Modal onToggleModal={toggleModal}>
           <img src={selectedImageUrl} alt={selectedImageTags} />
