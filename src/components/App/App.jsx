@@ -14,6 +14,8 @@ import {
   Modal,
 } from 'components';
 
+import { AiFillCloseCircle } from 'react-icons/ai';
+
 export function App() {
   const [input, setInput] = useState('');
   const [gallery, setGallery] = useState([]);
@@ -116,9 +118,18 @@ export function App() {
         <WarningPage text={`Something went wrong.\n Try again later.`} />
       )}
 
+      {/* {isModalShown && (
+        <Modal onToggleModal={toggleModal}>
+          <img src={selectedImageUrl} alt={selectedImageTags} />
+        </Modal>
+      )} */}
       {isModalShown && (
         <Modal onToggleModal={toggleModal}>
           <img src={selectedImageUrl} alt={selectedImageTags} />
+
+          <Button type="button" mode="modalClose" onClick={toggleModal}>
+            <AiFillCloseCircle />
+          </Button>
         </Modal>
       )}
     </Layout>

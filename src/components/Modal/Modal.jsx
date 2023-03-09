@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
-import { AiFillCloseCircle } from 'react-icons/ai';
+// import { AiFillCloseCircle } from 'react-icons/ai';
 
 import { Backdrop, Content, ButtonClose } from './Modal.styled';
 
@@ -22,14 +22,14 @@ export function Modal({ onToggleModal, children }) {
     if (e.target === e.currentTarget) onToggleModal();
   };
 
-  const handleOnCloseButton = () => onToggleModal();
+  // const handleOnCloseButton = () => onToggleModal();
 
   return createPortal(
     <Backdrop onClick={handleBackdropClick}>
       <Content>
-        <ButtonClose type="button" onClick={handleOnCloseButton}>
+        {/* <ButtonClose type="button" onClick={handleOnCloseButton}>
           <AiFillCloseCircle />
-        </ButtonClose>
+        </ButtonClose> */}
         {children}
       </Content>
     </Backdrop>,
