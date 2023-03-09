@@ -16,5 +16,5 @@ export function ImageGallery({ gallery, onSelectModalImage }) {
 
 ImageGallery.propTypes = {
   gallery: PropTypes.array.isRequired,
-  onSelectModalImage: PropTypes.func.isRequired,
+  // onSelectModalImage: PropTypes.func.isRequired,
 };
